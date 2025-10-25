@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - A.Hermanto Journal Index</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #2c5282;
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: white;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+        }
+
+        .nav-brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2c5282;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 0;
+            align-items: center;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav a {
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 1rem 1.25rem;
+            display: block;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: #2c5282;
+            background-color: #f7fafc;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background-color: #2c5282;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after, nav a.active::after {
+            width: 80%;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .nav-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            text-decoration: none;
+        }
+
+        .nav-btn-outline {
+            background-color: transparent;
+            color: #2c5282;
+            border: 2px solid #2c5282;
+        }
+
+        .nav-btn-outline:hover {
+            background-color: #2c5282;
+            color: white;
+        }
+
+        .nav-btn-solid {
+            background-color: #2c5282;
+            color: white;
+        }
+
+        .nav-btn-solid:hover {
+            background-color: #2a4365;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(44, 82, 130, 0.3);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #2c5282;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        main {
+            padding: 3rem 0;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #2c5282 0%, #2a4365 100%);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .hero-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .content-section h2 {
+            color: #2c5282;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid #edf2f7;
+        }
+
+        .content-section h3 {
+            color: #2d3748;
+            font-size: 1.25rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-section p {
+            color: #4a5568;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background-color: #f7fafc;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #2c5282;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #2c5282;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+            color: #4a5568;
+            margin-bottom: 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #2c5282 0%, #2a4365 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .index-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .index-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: #f7fafc;
+            border-radius: 6px;
+            border-left: 4px solid;
+        }
+
+        .index-item.sinta-1 { border-left-color: #d69e2e; }
+        .index-item.sinta-2 { border-left-color: #c05621; }
+        .index-item.sinta-3 { border-left-color: #38a169; }
+        .index-item.sinta-4 { border-left-color: #3182ce; }
+        .index-item.sinta-5 { border-left-color: #805ad5; }
+        .index-item.sinta-6 { border-left-color: #718096; }
+        .index-item.scopus { border-left-color: #e53e3e; }
+        .index-item.non-sinta { border-left-color: #a0aec0; }
+
+        .index-badge {
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            min-width: 80px;
+        }
+
+        .index-description {
+            color: #4a5568;
+            font-size: 0.875rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #f7fafc;
+            border-radius: 8px;
+        }
+
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2c5282 0%, #2a4365 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .team-name {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 0.25rem;
+        }
+
+        .team-role {
+            color: #2c5282;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-bio {
+            color: #4a5568;
+            font-size: 0.875rem;
+        }
+
+        footer {
+            background-color: #2d3748;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-content {
+                flex-wrap: wrap;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                width: 100%;
+                display: none;
+                background-color: #f7fafc;
+                padding: 1rem 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 0.75rem 1rem;
+                width: 100%;
+            }
+
+            .nav-actions {
+                width: 100%;
+                justify-content: stretch;
+                margin-top: 1rem;
+            }
+
+            .nav-actions.active {
+                display: flex;
+            }
+
+            .nav-actions:not(.active) {
+                display: none;
+            }
+
+            .nav-btn {
+                flex: 1;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-section h2 {
+                font-size: 1.75rem;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Journal Documentation</h1>
+            <p class="subtitle">List Index Jurnal Ilmiah [Financial Market, Moenetery Economics, Financial Technology, Digital Business, Science]</p>
+        </div>
+    </header>
+
+   <nav>
+        <div class="container">
+            <div class="nav-content">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                
+                <ul id="navMenu">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                </ul>
+
+                <div class="nav-actions" id="navActions">
+                    <a href="#" class="nav-btn nav-btn-outline">Sign In</a>
+                    <a href="#" class="nav-btn nav-btn-solid">Submit Paper</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="hero-section">
+                <h2>Tentang A.Hermanto Journal Index</h2>
+                <p>Platform dokumentasi jurnal akademik terpadu untuk memudahkan peneliti, akademisi, dan mahasiswa dalam menemukan jurnal berkualitas</p>
+            </div>
+
+            <div class="content-section">
+                <h2>Apa itu A.Hermanto Journal Index?</h2>
+                <p>
+                    A.Hermanto Journal Index adalah platform digital yang menyediakan akses terpusat ke berbagai jurnal akademik dan artikel penelitian dari berbagai bidang ilmu. Platform ini dirancang untuk memudahkan peneliti, dosen, mahasiswa, dan praktisi dalam mencari, mengakses, dan mengelola referensi jurnal ilmiah.
+                </p>
+                <p>
+                    Kami mengkurasi jurnal-jurnal berkualitas dari berbagai tingkat indeksasi, mulai dari Sinta 1 hingga Sinta 6, jurnal terindeks Scopus, hingga jurnal non-Sinta yang tetap memiliki kualitas baik. Semua jurnal yang kami tampilkan telah melalui proses kurasi untuk memastikan kualitas dan relevansinya.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h2>Statistik Platform</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Jurnal Terdaftar</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-label">Artikel Penelitian</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Bidang Ilmu</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5,000+</div>
+                        <div class="stat-label">Pengguna Aktif</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Fitur</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Pencarian Cerdas</h3>
+                        <p>Temukan jurnal dengan mudah menggunakan fitur pencarian berdasarkan judul, kata kunci, atau topik penelitian.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Filter Berdasarkan Index</h3>
+                        <p>Filter jurnal berdasarkan indeksasi Sinta (1-6), Scopus, atau kategori lainnya sesuai kebutuhan Anda.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Database Lengkap</h3>
+                        <p>Akses ribuan artikel dari berbagai bidang ilmu dengan informasi metadata yang lengkap dan akurat.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Akses Cepat</h3>
+                        <p>Interface yang responsif dan cepat memungkinkan Anda menemukan referensi dalam hitungan detik.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Mobile Friendly</h3>
+                        <p>Akses platform dari mana saja menggunakan smartphone, tablet, atau komputer Anda.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Update Berkala</h3>
+                        <p>Database kami diperbarui secara berkala untuk memastikan Anda mendapatkan informasi terkini.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Kategori Indeksasi</h2>
+                <p>A.Hermanto Journal Index mengkategorikan jurnal berdasarkan sistem indeksasi yang diakui secara nasional dan internasional:</p>
+                
+                <div class="index-list">
+                    <div class="index-item sinta-1">
+                        <div class="index-badge">Sinta 1</div>
+                        <div class="index-description">Jurnal terakreditasi tertinggi tingkat nasional</div>
+                    </div>
+                    <div class="index-item sinta-2">
+                        <div class="index-badge">Sinta 2</div>
+                        <div class="index-description">Jurnal terakreditasi sangat baik</div>
+                    </div>
+                    <div class="index-item sinta-3">
+                        <div class="index-badge">Sinta 3</div>
+                        <div class="index-description">Jurnal terakreditasi baik</div>
+                    </div>
+                    <div class="index-item sinta-4">
+                        <div class="index-badge">Sinta 4</div>
+                        <div class="index-description">Jurnal terakreditasi cukup baik</div>
+                    </div>
+                    <div class="index-item sinta-5">
+                        <div class="index-badge">Sinta 5</div>
+                        <div class="index-description">Jurnal terakreditasi</div>
+                    </div>
+                    <div class="index-item sinta-6">
+                        <div class="index-badge">Sinta 6</div>
+                        <div class="index-description">Jurnal terdaftar Sinta</div>
+                    </div>
+                    <div class="index-item scopus">
+                        <div class="index-badge">Scopus</div>
+                        <div class="index-description">Jurnal terindeks Scopus internasional</div>
+                    </div>
+                    <div class="index-item non-sinta">
+                        <div class="index-badge">Non Sinta</div>
+                        <div class="index-description">Jurnal berkualitas non-Sinta</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Pengembang</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-avatar">ARA</div>
+                        <div class="team-name">A.M Arafandi</div>
+                        <div class="team-role">Platform Manager</div>
+                        <div class="team-bio">Ahli sistem informasi dengan pengalaman 15 tahun dalam pengembangan platform akademik.</div>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-avatar">AH</div>
+                        <div class="team-name">Andi Hermanto,SE., M.Si</div>
+                        <div class="team-role">Financial Market, Moenetery Economics, Financial Technology</div>
+                        <div class="team-bio">Spesialis dalam kurasi konten akademik dan evaluasi kualitas jurnal ilmiah.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>Hubungi Kami</h2>
+                <p>
+                    Untuk informasi lebih lanjut, pertanyaan, atau kerja sama, silakan hubungi kami melalui:
+                </p>
+                <p>
+                    <strong>Email:</strong> a.hermanto@unm.ac.id<br>
+                    <strong>Telepon:</strong> 089512402404<br>
+                    <strong>Alamat:</strong> Makassar, Sulawesi Selatan, Indonesia
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 A.Hermanto Journal Index. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        const navActions = document.getElementById('navActions');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navActions.classList.toggle('active');
+            mobileMenuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a:not(.nav-brand)');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navMenu.classList.remove('active');
+                    navActions.classList.remove('active');
+                    mobileMenuBtn.textContent = '☰';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

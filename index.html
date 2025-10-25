@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.Hermanto Journal Index</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Kumpulan dokumentasi jurnal, artikel ilmiah, dan riset terkini dalam bidang Economy, Science, dan Teknologi.">
+    <meta name="author" content="Andi Hermanto">
+    <meta name="keywords" content="journal, research, documentation, financial market, monetery economics, financial technology, digital business, science, publication">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Journal Documentation">
+    <meta property="og:description" content="Platform dokumentasi jurnal ilmiah dan publikasi riset terkini.">
+    <meta property="og:image" content="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=Xhkb-ugAAAAJ&citpid=6">
+    <meta property="og:url" content="https://andihermanto.id">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Journal Documentation">
+    <meta name="twitter:description" content="Platform dokumentasi jurnal ilmiah dan publikasi riset terkini.">
+    <meta name="twitter:image" content="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=Xhkb-ugAAAAJ&citpid=6">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>A.Hermanto Journal Index</h1>
+            <p class="subtitle">List Index Jurnal Ilmiah [Financial Market, Moenetery Economics, Financial Technology, Digital Business, Science]</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                
+                <ul id="navMenu">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About</a></li>
+                </ul>
+
+                <div class="nav-actions" id="navActions">
+                    <a href="#" class="nav-btn nav-btn-outline">Sign In</a>
+                    <a href="#" class="nav-btn nav-btn-solid">Submit Paper</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="search-box">
+                <input type="text" placeholder="Cari jurnal berdasarkan judul, penulis, atau kata kunci..." id="searchInput">
+                
+                <div class="filter-section">
+                    <label class="filter-label">Filter berdasarkan Index:</label>
+                    <div class="filter-buttons" id="filterButtons">
+                        <button class="filter-btn active" data-filter="all">
+                            Semua <span class="count">12</span>
+                        </button>
+                        <button class="filter-btn" data-filter="sinta-1">
+                            Sinta 1 <span class="count">2</span>
+                        </button>
+                        <button class="filter-btn" data-filter="sinta-2">
+                            Sinta 2 <span class="count">2</span>
+                        </button>
+                        <button class="filter-btn" data-filter="sinta-3">
+                            Sinta 3 <span class="count">2</span>
+                        </button>
+                        <button class="filter-btn" data-filter="sinta-4">
+                            Sinta 4 <span class="count">1</span>
+                        </button>
+                        <button class="filter-btn" data-filter="sinta-5">
+                            Sinta 5 <span class="count">1</span>
+                        </button>
+                        <button class="filter-btn" data-filter="sinta-6">
+                            Sinta 6 <span class="count">1</span>
+                        </button>
+                        <button class="filter-btn" data-filter="scopus">
+                            Scopus <span class="count">2</span>
+                        </button>
+                        <button class="filter-btn" data-filter="non-sinta">
+                            Non Sinta <span class="count">1</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-info" id="resultsInfo">
+                <span class="results-count">Menampilkan <strong id="resultCount">12</strong> dari <strong>12</strong> jurnal</span>
+                <button class="clear-filters" id="clearFilters" style="display: none;">Reset Filter</button>
+            </div>
+
+            <div class="journal-list" id="journalList">
+                <article class="journal-item" data-index="sinta-1">
+                    <div class="journal-header">
+                        <div>
+                            <h2 class="journal-title">Machine Learning in Healthcare: A Comprehensive Review</h2>
+                            <p class="journal-date">Published: October 15, 2024</p>
+                        </div>
+                    </div>
+                    <div class="journal-meta">
+                        <span class="index-badge sinta-1">Sinta 1</span>
+                        <span class="meta-tag">Machine Learning</span>
+                        <span class="meta-tag">Healthcare</span>
+                        <span class="meta-tag">AI</span>
+                    </div>
+                    <p class="journal-description">
+                        An extensive review of machine learning applications in modern healthcare systems, covering diagnostic tools, treatment recommendations, and patient outcome predictions.
+                    </p>
+                    <div class="journal-footer">
+                        <a href="#" class="btn btn-primary">Read More</a>
+                        <a href="#" class="btn btn-secondary">Download PDF</a>
+                    </div>
+                </article>
+
+                <article class="journal-item" data-index="scopus">
+                    <div class="journal-header">
+                        <div>
+                            <h2 class="journal-title">Sustainable Energy Solutions for Urban Development</h2>
+                            <p class="journal-date">Published: September 28, 2024</p>
+                        </div>
+                    </div>
+                    <div class="journal-meta">
+                        <span class="index-badge scopus">Scopus</span>
+                        <span class="meta-tag">Sustainability</span>
+                        <span class="meta-tag">Energy</span>
+                        <span class="meta-tag">Urban Planning</span>
+                    </div>
+                    <p class="journal-description">
+                        Exploring innovative approaches to integrate renewable energy sources in urban infrastructure while maintaining cost-effectiveness and environmental sustainability.
+                    </p>
+                    <div class="journal-footer">
+                        <a href="#" class="btn btn-primary">Read More</a>
+                        <a href="#" class="btn btn-secondary">Download PDF</a>
+                    </div>
+                </article>
+
+                <article class="journal-item" data-index="sinta-2">
+                    <div class="journal-header">
+                        <div>
+                            <h2 class="journal-title">Blockchain Technology in Supply Chain Management</h2>
+                            <p class="journal-date">Published: August 12, 2024</p>
+                        </div>
+                    </div>
+                    <div class="journal-meta">
+                        <span class="index-badge sinta-2">Sinta 2</span>
+                        <span class="meta-tag">Blockchain</span>
+                        <span class="meta-tag">Supply Chain</span>
+                        <span class="meta-tag">Technology</span>
+                    </div>
+                    <p class="journal-description">
+                        Investigating the implementation of blockchain technology for improving transparency, traceability, and efficiency in global supply chain operations.
+                    </p>
+                    <div class="journal-footer">
+                        <a href="#" class="btn btn-primary">Read More</a>
+                        <a href="#" class="btn btn-secondary">Download PDF</a>
+                    </div>
+                </article>
+
+                <article class="journal-item" data-index="sinta-3">
+                    <div class="journal-header">
+                        <div>
+                            <h2 class="journal-title">Quantum Computing: Current State and Future Prospects</h2>
+                            <p class="journal-date">Published: July 5, 2024</p>
+                        </div>
+                    </div>
+                    <div class="journal-meta">
+                        <span class="index-badge sinta-3">Sinta 3</span>
+                        <span class="meta-tag">Quantum Computing</span>
+                        <span class="meta-tag">Physics</span>
+                        <span class="meta-tag">Computing</span>
+                    </div>
+                    <p class="journal-description">
+                        A comprehensive analysis of quantum computing advancements, challenges in implementation, and potential applications across various scientific domains.
+                    </p>
+                    <div class="journal-footer">
+                        <a href="#" class="btn btn-primary">Read More</a>
+                        <a href="#" class="btn btn-secondary">Download PDF</a>
+                    </div>
+                </article>
+
+                <article class="journal-item" data-index="sinta-1">
+                    <div class="journal-header">
+                        <div>
+                            <h2 class="journal-title">Artificial Intelligence in Education: Transforming Learning</h2>
+                            <p class="journal-date">Published: June 20, 2024</p>
+                        </div>
+                    </div>
+                    <div class="journal-meta">
+                        <span class="index-badge sinta-1">Sinta 1</span>
+                        <span class="meta-tag">Education</span>
+                        <span class="meta-tag">AI</span>
+                        <span class="meta-tag">E-Learning</span>
+                    </div>
+                    <p class="journal-description">
+                        Examining the role of artificial intelligence in personalized learning, adaptive assessments, and intelligent tutoring systems in modern education.
+                    </p>
+                    <div class="journal-footer">
+                        <a href="#" class="btn btn-primary">Read More</a>
+                        <a href="#" class="btn btn-secondary">Download PDF</a>
+                    </div>
+                </article>
+
+                <article class="journal-item" data-index="sinta-4">
+                    <div class="journal-header">
+                        <div>
+                            <h2 class="journal-title">Climate Change Impact on Agriculture in Southeast Asia</h2>
+                            <p class="journal-date">Published: May 15, 2024</p>
+                        </div>
+                    </div>
+                    <div class="journal-meta">
+                        <span class="index-badge sinta-4">Sinta 4</span>
+                        <span class="meta-tag">Agriculture</span>
+                        <span class="meta-tag">Climate</span>
+                        <span class="meta-tag">Southeast Asia</span>
+                    </div>
+                    <p class="journal-description">
+                        Analyzing the effects of climate change on agricultural productivity and food security in Southeast Asian countries and potential adaptation strategies.
+                    </p>
+                    <div class="journal-footer">
+                        <a href="#" class="btn btn-primary">Read More</a>
+                        <a href="#" class="btn btn-secondary">Download PDF</a>
+                    </div>
+                </article>
+
+                <article class="journal-item" data-index="scopus">
+                    <div class="journal-header">
+                        <div>
+                            <h2 class="journal-title">Cybersecurity Threats in IoT Networks</h2>
+                            <p class="journal-date">Published: April 10, 2024</p>
+                        </div>
+                    </div>
+                    <div class="journal-meta">
+                        <span class="index-badge scopus">Scopus</span>
+                        <span class="meta-tag">Cybersecurity</span>
+                        <span class="meta-tag">IoT</span>
+                        <span class="meta-tag">Network Security</span>
+                    </div>
+                    <p class="journal-description">
+                        Investigating emerging cybersecurity threats in Internet of Things networks and developing robust security frameworks for connected devices.
+                    </p>
+                    <div class="journal-footer">
+                        <a href="#" class="btn btn-primary">Read More</a>
+                        <a href="#" class="btn btn-secondary">Download PDF</a>
+                    </div>
+                </article>
+
+                <article class="journal-item" data-index="sinta-2">
+                    <div class="journal-header">
+                        <div>
+                            <h2 class="journal-title">Digital Transformation in Indonesian MSMEs</h2>
+                            <p class="journal-date">Published: March 25, 2024</p>
+                        </div>
+                    </div>
+                    <div class="journal-meta">
+                        <span class="index-badge sinta-2">Sinta 2</span>
+                        <span class="meta-tag">Digital Economy</span>
+                        <span class="meta-tag">MSME</span>
+                        <span class="meta-tag">Indonesia</span>
+                    </div>
+                    <p class="journal-description">
+                        Exploring the digital transformation journey of Indonesian micro, small, and medium enterprises and its impact on business growth and competitiveness.
+                    </p>
+                    <div class="journal-footer">
+                        <a href="#" class="btn btn-primary">Read More</a>
+                        <a href="#" class="btn btn-secondary">Download PDF</a>
+                    </div>
+                </article>
+
+                <article class="journal-item" data-index="sinta-5">
+                    <div class="journal-header">
+                        <div>
+                            <h2 class="journal-title">Traditional Medicine Plants in Indonesian Archipelago</h2>
+                            <p class="journal-date">Published: February 18, 2024</p>
+                        </div>
+                    </div>
+                    <div class="journal-meta">
+                        <span class="index-badge sinta-5">Sinta 5</span>
+                        <span class="meta-tag">Traditional Medicine</span>
+                        <span class="meta-tag">Botany</span>
+                        <span class="meta-tag">Indonesia</span>
+                    </div>
+                    <p class="journal-description">
+                        Documenting indigenous medicinal plants used across the Indonesian archipelago and their potential for modern pharmaceutical development.
+                    </p>
+                    <div class="journal-footer">
+                        <a href="#" class="btn btn-primary">Read More</a>
+                        <a href="#" class="btn btn-secondary">Download PDF</a>
+                    </div>
+                </article>
+
+                <article class="journal-item" data-index="sinta-3">
+                    <div class="journal-header">
+                        <div>
+                            <h2 class="journal-title">Smart City Development: Case Studies from Asia</h2>
+                            <p class="journal-date">Published: January 30, 2024</p>
+                        </div>
+                    </div>
+                    <div class="journal-meta">
+                        <span class="index-badge sinta-3">Sinta 3</span>
+                        <span class="meta-tag">Smart City</span>
+                        <span class="meta-tag">Urban Planning</span>
+                        <span class="meta-tag">Technology</span>
+                    </div>
+                    <p class="journal-description">
+                        Comparative analysis of smart city initiatives in major Asian cities, examining successful implementations and lessons learned.
+                    </p>
+                    <div class="journal-footer">
+                        <a href="#" class="btn btn-primary">Read More</a>
+                        <a href="#" class="btn btn-secondary">Download PDF</a>
+                    </div>
+                </article>
+
+                <article class="journal-item" data-index="sinta-6">
+                    <div class="journal-header">
+                        <div>
+                            <h2 class="journal-title">Community-Based Tourism in Rural Indonesia</h2>
+                            <p class="journal-date">Published: December 15, 2023</p>
+                        </div>
+                    </div>
+                    <div class="journal-meta">
+                        <span class="index-badge sinta-6">Sinta 6</span>
+                        <span class="meta-tag">Tourism</span>
+                        <span class="meta-tag">Community Development</span>
+                        <span class="meta-tag">Indonesia</span>
+                    </div>
+                    <p class="journal-description">
+                        Evaluating the impact of community-based tourism initiatives on rural economic development and cultural preservation in Indonesia.
+                    </p>
+                    <div class="journal-footer">
+                        <a href="#" class="btn btn-primary">Read More</a>
+                        <a href="#" class="btn btn-secondary">Download PDF</a>
+                    </div>
+                </article>
+
+                <article class="journal-item" data-index="non-sinta">
+                    <div class="journal-header">
+                        <div>
+                            <h2 class="journal-title">Local Wisdom in Environmental Conservation</h2>
+                            <p class="journal-date">Published: November 5, 2023</p>
+                        </div>
+                    </div>
+                    <div class="journal-meta">
+                        <span class="index-badge non-sinta">Non Sinta</span>
+                        <span class="meta-tag">Environment</span>
+                        <span class="meta-tag">Conservation</span>
+                        <span class="meta-tag">Local Wisdom</span>
+                    </div>
+                    <p class="journal-description">
+                        Exploring traditional ecological knowledge and local wisdom practices in environmental conservation efforts across Indonesian communities.
+                    </p>
+                    <div class="journal-footer">
+                        <a href="#" class="btn btn-primary">Read More</a>
+                        <a href="#" class="btn btn-secondary">Download PDF</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Andi Hermanto. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Elements
+        const searchInput = document.getElementById('searchInput');
+        const journalItems = Array.from(document.querySelectorAll('.journal-item'));
+        const filterButtonsContainer = document.getElementById('filterButtons');
+        const filterButtons = Array.from(filterButtonsContainer.querySelectorAll('.filter-btn'));
+        const resultCountEl = document.getElementById('resultCount');
+        const clearFiltersBtn = document.getElementById('clearFilters');
+
+        // State
+        let activeFilter = 'all';
+
+        // Helper: update visible items based on activeFilter and search term
+        function updateVisibility() {
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            journalItems.forEach(item => {
+                const itemIndex = item.getAttribute('data-index') || '';
+                const title = item.querySelector('.journal-title').textContent.toLowerCase();
+                const description = item.querySelector('.journal-description').textContent.toLowerCase();
+                const tags = Array.from(item.querySelectorAll('.meta-tag'))
+                    .map(tag => tag.textContent.toLowerCase())
+                    .join(' ');
+
+                // Filter by category
+                const passesFilter = (activeFilter === 'all') || (itemIndex === activeFilter);
+
+                // Filter by search
+                const passesSearch = !searchTerm || title.includes(searchTerm) || description.includes(searchTerm) || tags.includes(searchTerm);
+
+                if (passesFilter && passesSearch) {
+                    item.style.display = '';
+                    visibleCount += 1;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Update result count
+            resultCountEl.textContent = visibleCount;
+
+            // Show clear/reset when a real filter or search is active
+            if (activeFilter !== 'all' || searchInput.value.trim() !== '') {
+                clearFiltersBtn.style.display = 'inline';
+            } else {
+                clearFiltersBtn.style.display = 'none';
+            }
+        }
+
+        // Initialize counts (optional: can update the small .count spans if desired)
+        function initializeCounts() {
+            // Set initial result count to total items
+            resultCountEl.textContent = journalItems.length;
+        }
+
+        // Filter button clicks
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const filter = btn.getAttribute('data-filter');
+
+                // Toggle active class: make clicked one active and remove from others
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                activeFilter = filter || 'all';
+                updateVisibility();
+            });
+        });
+
+        // Search input
+        searchInput.addEventListener('input', () => {
+            updateVisibility();
+        });
+
+        // Clear / Reset filters
+        clearFiltersBtn.addEventListener('click', () => {
+            // Reset filter buttons
+            filterButtons.forEach(b => b.classList.remove('active'));
+            const allBtn = filterButtonsContainer.querySelector('[data-filter="all"]');
+            if (allBtn) allBtn.classList.add('active');
+
+            activeFilter = 'all';
+            searchInput.value = '';
+            updateVisibility();
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+        const navActions = document.getElementById('navActions');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navActions.classList.toggle('active');
+            mobileMenuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a:not(.nav-brand)');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navMenu.classList.remove('active');
+                    navActions.classList.remove('active');
+                    mobileMenuBtn.textContent = '☰';
+                }
+            });
+        });
+
+        // Init
+        initializeCounts();
+        updateVisibility();
+    </script>
+</body>
+</html>
